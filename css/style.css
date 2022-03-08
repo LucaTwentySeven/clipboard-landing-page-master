@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+:root {
+    /* Primary colors */
+     --strong-Cyan: hsl(171, 66%, 44%); /* Strong Cyan */
+     --light-Blue: hsl(233, 100%, 69%); /*  Light Blue */
+    /* Neutral colors */
+    --dark-Grayish-Blue: hsl(210, 10%, 33%); /* Dark Grayish Blue */
+    --grayish-Blue: hsl(201, 11%, 66%); /* Grayish Blue */
+    --dark-Black: hsl(0, 0%, 5%); /* headers */
+    --light-Gray: hsl(0, 0%, 95%); /* background */
+    --clear-White: hsl(0, 0%, 100%); /* just white */
+}
+
+/* CSS Reset Start */
+
+* {
+    box-sizing: border-box;
+}
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+    vertical-align: baseline;
+}
+img, a {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* CSS Reset End */
+
+/* CSS Normalize Start */
+
+body {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--dark-Grayish-Blue);
+    background-color: var(--clear-White);
+}
+h1 {
+    font-size: clamp(1.625rem, 1.1411rem + 1.6129vw, 2.25rem);
+    font-weight: 600;
+}
+h3 {
+    font-size: clamp(1.625rem, 1.1411rem + 1.6129vw, 2.25rem);
+    font-weight: 600;
+}
+h4 {
+    font-size: clamp(1.25rem, 1.0565rem + 0.6452vw, 1.5rem);
+    font-weight: 600;
+}
+h1, h3, h4 {
+    color: var(--dark-Black);
+    margin: 1.6vh 0;
+}
+p, a, img {
+    margin: 5vh 0;
+}
+img {
+    width: 100%;
+}
+
+/* CSS Normalize End */
+
+header, section, footer {
+    width: 100%;
+    height: 100%;
+}
+header, #intro, #about, #workflow, #sponsors, #CTA {
+    padding: 16vh 3vh 2vh 3vh;
+}
+#intro, #CTA {
+    max-width: 900px;
+    margin: auto;
+}
+header {
+    background-image: url('../images/bg-header-mobile.png');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    padding: 1vh 6vh;
+    color: var(--clear-White);
+    text-decoration: none;
+    border-radius: 3vh;
+    border-bottom: 3px solid var(--dark-Grayish-Blue);
+    box-shadow: 0 10px 15px -15px var(--dark-Grayish-Blue);
+    transition: all 0.2s ease-in-out;
+}
+.primary {
+    background-color: var(--strong-Cyan);
+}
+.secondary {
+    background-color: var(--light-Blue);
+}
+.button:hover {
+    opacity: 0.8;
+}
+#workflow h4 {
+    margin-top: 4vh;
+}
+#workflow p {
+    margin-bottom: 8vh;
+}
+#workflow > p {
+    margin-bottom: 16vh;
+}
+.card {
+    width: 100%;
+    max-width: 350px;
+}
+#sponsors > img {
+    width: 30%;
+    padding: 0;
+}
+footer {
+    padding: 8vh 3vh;
+    background-color: var(--light-Gray);
+}
+footer > img {
+    display: inline-block;
+    width: 50px;
+}
+.social-icons svg {
+    margin: 0 1vh;
+    fill: #4C545C;
+    transition: all 0.2s ease-in-out;
+}
+.social-icons > a {
+    display: inline-block;
+}
+.social-icons > a:hover > svg {
+    fill: #26baa4;
+}
+.footer-menu li a {
+    color: var(--dark-Grayish-Blue);
+    text-decoration: none;
+    padding: 0 1vw;
+    transition: all 0.2s ease-in-out;
+}
+.footer-menu li a:hover {
+    color: var(--strong-Cyan);
+}
+.attribution {
+    font-size: 12px;
+    color: #000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh 0;
+}
+.attribution a {
+    display: inline-block;
+    color: #000;
+    margin: 0;
+}
+.attribution > p {
+    padding-bottom: 0;
+    margin: 1vh 0;
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        background-image: url('../images/bg-header-desktop.png');
+    } 
+    .button {
+        display: inline-block;
+        margin: 5vh 1vw;
+    }
+    .flexbox {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    #about.flexbox, #sponsors.flexbox, footer.flexbox {
+        align-items: center;
+    }
+    #about.flexbox > div, #about.flexbox > img {
+        width: 50%;
+    }
+    #about.flexbox > img {
+        position: relative;
+        left: -10vw;
+    }
+    #about.flexbox > div {
+        text-align: left;
+        padding: 0 20% 0 0;
+    }
+    .card {
+        width: 33.33%;
+        max-width: 350px;
+        padding: 2vh;
+    }
+    #sponsors > img {
+        width: 15%;
+        padding: 0 2vw;
+    }
+    footer.flexbox {
+        justify-content: space-around;
+    }
+    footer {
+        text-align: left;
+    }
+    .footer-menu li {
+        display: inline-block;
+    }
+}
